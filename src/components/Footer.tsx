@@ -14,7 +14,7 @@ export function Footer() {
             <span className="text-xl font-bold text-white">Parzik</span>
           </div>
           <div className="text-gray-400 text-sm">
-            © 2024 Parzik. All rights reserved.
+            © 2025 Parzik. Todos los derechos reservados.
           </div>
         </div>
       </div>

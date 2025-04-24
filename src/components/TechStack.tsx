@@ -7,7 +7,7 @@ const technologies = [
   { name: 'Express', logo: 'https://cdn.worldvectorlogo.com/logos/express-109.svg', invert: true },
   { name: 'MongoDB', logo: 'https://img.icons8.com/?size=512&id=74402&format=png' },
   { name: 'Redis', logo: 'https://cdn.worldvectorlogo.com/logos/redis.svg' },
-  { name: 'MySQL', logo: 'https://www.mysql.com/common/logos/logo-mysql-170x115.png' },
+  { name: 'PostgreSQL', logo: 'https://www.postgresql.org/media/img/about/press/elephant.png' },
   { name: 'AWS', logo: 'https://cast-software.awsworkshop.io/images/AWS-Logo_White-Color.png' },
   { name: 'Docker', logo: 'https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png', }
 ];
@@ -37,7 +37,7 @@ export function TechStack() {
   return (
     <section className="container mx-auto px-6 py-16 border-t border-gray-800">
       <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
-        Powered by Industry-Leading Technologies
+        Impulsado por Tecnologías Líderes en la Industria
       </h2>
       <div 
         className="overflow-hidden"

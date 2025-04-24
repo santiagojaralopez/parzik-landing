@@ -6,16 +6,16 @@ export function Hero() {
       <div className="flex flex-col md:flex-row items-center">
         <div className="w-full md:w-1/2 mb-10 md:mb-0">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Making Your Business Life Simple
+            Transformando la Salud a través de la Tecnología
           </h1>
           <p className="text-xl text-gray-300">
-            Affordable technology solutions designed for small businesses. No expensive memberships, just straightforward services that work for you.
+            Desde apoyo en urgencias hasta gestión de consultas, nuestras soluciones tecnológicas están revolucionando la forma en que los profesionales de la salud atienden a sus pacientes
           </p>
         </div>
         <div className="hidden md:block md:w-1/2 md:pl-8">
           <img 
-            src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=2070"
-            alt="Software Development"
+            src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80"
+            alt="Tecnología Moderna en Salud"
             className="rounded-lg shadow-2xl w-11/12 mx-auto"
           />
         </div>
