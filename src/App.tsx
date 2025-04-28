@@ -1,26 +1,24 @@
-import React from 'react';
-import { Toaster } from 'react-hot-toast';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { TrustedBy } from './components/TrustedBy';
-import { TechStack } from './components/TechStack';
-import { Features } from './components/Features';
-import { CTA } from './components/CTA';
-import { Footer } from './components/Footer';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { HomePage } from "./pages/HomePage";
+import { LandingPageService } from "./pages/LandingPageService";
 
 function App() {
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-      <Toaster position="top-right" />
-      <Navbar />
-      <Hero />
-      <TrustedBy />
-      <TechStack />
-      <Features />
-      <CTA />
-      <Footer />
-    </div>
-  );
+    return (
+        <BrowserRouter>
+            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
+                <Toaster position="top-right" />
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route
+                        path="/landing-pages"
+                        element={<LandingPageService />}
+                    />
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
