@@ -1,24 +1,19 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { Toaster } from "react-hot-toast";
-import { HomePage } from "./pages/HomePage";
-import { LandingPageService } from "./pages/LandingPageService";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { HomePage } from './pages/HomePage';
 
 function App() {
-    return (
-        <BrowserRouter>
-            <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black">
-                <Toaster position="top-right" />
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route
-                        path="/landing-pages"
-                        element={<LandingPageService />}
-                    />
-                </Routes>
-            </div>
-        </BrowserRouter>
-    );
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#0A0A0A]">
+        <Toaster position="top-right" />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
+  );
 }
 
 export default App;

@@ -1,5 +1,5 @@
 /// <reference types="vite/client" />
 
 interface Window {
-    $MPC_loaded?: boolean;
-  }
+  $MPC_loaded?: boolean;
+}
