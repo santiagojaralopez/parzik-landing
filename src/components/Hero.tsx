@@ -1,24 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { TypedText } from './TypedText';
+import { ContactModal } from './ContactModal';
 
 export function Hero() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="container mx-auto px-6 py-16">
-      <div className="flex flex-col md:flex-row items-center">
-        <div className="w-full md:w-1/2 mb-10 md:mb-0">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Innovación en Software y Salud Digital
-          </h1>
-          <p className="text-xl text-gray-300">
-            En Parzik, combinamos experiencia técnica con visión innovadora para crear soluciones que transforman negocios y mejoran la atención médica.
-          </p>
+      <div className="flex flex-col items-center text-center max-w-5xl mx-auto">
+        <h1 className="text-3xl md:text-5xl font-bold mb-4 flex flex-col gap-4">
+          <div className="whitespace-nowrap">Desarrollamos tus aplicaciones Web</div>
+          <div className="flex items-center justify-center">
+            <TypedText />
+          </div>
+          <div className="whitespace-nowrap">para que tu negocio crezca sin limites</div>
+        </h1>
+        
+        <br/>
+        
+        <h3 className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl">
+          Creada para empresas, instituciones, emprendedores y PYMEs que buscan soluciones tecnológicas eficientes, escalables y sostenibles
+        </h3>
+
+        <br/>
+
+        <div className="flex flex-col sm:flex-row gap-4 mb-12">
+          <button 
+            className="px-8 py-3 bg-[#cbe850] text-black font-semibold rounded-lg hover:bg-[#b5d046] transition-colors"
+            onClick={() => window.location.href = '#pricing'}
+          >
+            Solicitar presupuesto
+          </button>
+          <button 
+            className="px-8 py-3 border-2 border-[#cbe850] text-[#cbe850] font-semibold rounded-lg hover:bg-[#cbe850] hover:text-black transition-colors"
+            onClick={() => setIsModalOpen(true)}
+          >
+            Contáctanos
+          </button>
         </div>
-        <div className="hidden md:block md:w-1/2 md:pl-8">
-          <img 
-            src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80"
-            alt="Tecnología Moderna"
-            className="rounded-lg shadow-2xl w-11/12 mx-auto"
-          />
-        </div>
+
+        <img 
+          src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80"
+          alt="Tecnología Moderna"
+          className="rounded-lg shadow-2xl w-full max-w-2xl mx-auto"
+        />
+
+        <ContactModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
       </div>
     </section>
   );

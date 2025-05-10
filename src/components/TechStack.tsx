@@ -16,15 +16,12 @@ const technologies = [
 
 export function TechStack() {
   return (
-    <section className="container mx-auto px-6 py-16 border-t border-[#2A2A2A]">
-      <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-12">
-        Impulsado por Tecnologías Líderes en la Industria
-      </h2>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+    <section className="container mx-auto px-6 pb-16">
+      <div className="flex flex-wrap justify-center gap-8">
         {technologies.map((tech, index) => (
           <div 
             key={`${tech.name}-${index}`}
-            className="flex flex-col items-center justify-center p-4 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] transition-transform duration-300 hover:scale-105"
+            className="flex flex-col items-center justify-center p-4 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] transition-transform duration-300 hover:scale-105 w-[180px]"
           >
             <div className="h-16 flex items-center justify-center p-2">
               <img 
