@@ -16,24 +16,24 @@ const technologies = [
 
 export function TechStack() {
   return (
-    <section className="container mx-auto px-6 pb-16">
-      <div className="flex flex-wrap justify-center gap-8">
-        {technologies.map((tech, index) => (
-          <div 
-            key={`${tech.name}-${index}`}
-            className="flex flex-col items-center justify-center p-4 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] transition-transform duration-300 hover:scale-105 w-[180px]"
-          >
-            <div className="h-16 flex items-center justify-center p-2">
-              <img 
-                src={tech.logo} 
-                alt={tech.name}
-                className={`h-12 w-auto object-contain ${tech.invert ? 'invert' : ''}`}
-              />
-            </div>
-            <span className="text-gray-400 text-sm mt-2">{tech.name}</span>
-          </div>
-        ))}
-      </div>
-    </section>
+      <section className="container mx-auto px-6 pb-16">
+        <div className="flex flex-wrap justify-center gap-4">
+          {technologies.map((tech, index) => (
+              <div
+                  key={`${tech.name}-${index}`}
+                  className="flex flex-col items-center justify-center p-3 bg-[#1A1A1A] rounded-lg border border-[#2A2A2A] transition-transform duration-300 hover:scale-105 w-[calc(50%-8px)] sm:w-[calc(33.33%-16px)] md:w-[calc(25%-16px)] lg:w-[calc(16.66%-16px)]"
+              >
+                <div className="h-10 sm:h-12 flex items-center justify-center p-2">
+                  <img
+                      src={tech.logo}
+                      alt={tech.name}
+                      className={`h-8 sm:h-10 w-auto object-contain ${tech.invert ? 'invert' : ''}`}
+                  />
+                </div>
+                <span className="text-xs sm:text-sm text-gray-400 mt-2">{tech.name}</span>
+              </div>
+          ))}
+        </div>
+      </section>
   );
 }
