@@ -1,18 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Clock, Rocket, Laptop } from 'lucide-react';
+import { ContactModal } from './ContactModal';
 
 const plans = [
   {
     icon: Laptop,
     name: 'Lite',
-    price: '8.000.000',
     timeframe: '4 a 6 semanas',
     description: 'Ideal para emprendedores que necesitan validar ideas, automatizar tareas específicas o construir un producto mínimo viable (MVP)',
   },
   {
     icon: Rocket,
     name: 'Pro',
-    price: '15.000.000',
     timeframe: '6 a 10 semanas',
     description: 'Ideal para negocios que buscan un software robusto con lógica interna, mayor funcionalidad y espacio para crecer',
     popular: true,
@@ -20,13 +19,20 @@ const plans = [
   {
     icon: Clock,
     name: 'Scale Up',
-    price: '20.000.000',
     timeframe: '10 a 16 semanas',
     description: 'Ideal para empresas que necesitan escalar digitalmente con una solución completa, segura y 100% personalizada',
   },
 ];
 
 export function CustomSoftwarePricing() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState('');
+
+  const handleQuoteRequest = (planName: string) => {
+    setSelectedPlan(planName);
+    setIsModalOpen(true);
+  };
+
   return (
       <section id="software-pricing" className="container mx-auto px-6 py-20">
         <div className="text-center mb-16">
@@ -56,25 +62,28 @@ export function CustomSoftwarePricing() {
                 <div className="flex flex-col items-center text-center">
                   <plan.icon className="h-12 w-12 text-[#cbe850] mb-4" />
                   <h3 className="text-2xl font-bold text-white mb-2">{plan.name}</h3>
-                  <div className="mt-4">
-                    <div className="text-3xl font-bold text-white">
-                      Desde ${plan.price}
-                    </div>
-                    <div className="text-gray-400 mt-1">COP</div>
-                  </div>
                   <div className="mt-4 text-sm text-gray-300">
                     📦 Proyecto a medida – Desarrollo en {plan.timeframe}
                   </div>
                   <div className="mt-6 text-gray-300">
                     🟢 {plan.description}
                   </div>
-                  <button className="mt-8 w-full bg-[#cbe850] text-black px-8 py-3 rounded-lg hover:bg-[#b5d046] transition-colors font-semibold">
+                  <button
+                      className="mt-8 w-full bg-[#cbe850] text-black px-8 py-3 rounded-lg hover:bg-[#b5d046] transition-colors font-semibold"
+                      onClick={() => handleQuoteRequest(plan.name)}
+                  >
                     Solicitar Cotización
                   </button>
                 </div>
               </div>
           ))}
         </div>
+
+        <ContactModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            defaultTitle={`Cotización Software a la medida - Plan ${selectedPlan}`}
+        />
       </section>
   );
 }
