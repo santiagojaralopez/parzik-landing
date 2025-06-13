@@ -66,12 +66,6 @@ const features = [
       { name: 'Sistema web auto-administrable', lite: false, pro: false, proPlus: true },
     ]
   },
-  {
-    category: 'Renovación Anual',
-    items: [
-      { name: 'Hosting, dominio y SSL', lite: '$ 390.000 COP', pro: '$ 490.000 COP', proPlus: '$ 590.000 COP' },
-    ]
-  }
 ];
 
 export function Pricing() {
